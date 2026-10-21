@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevPath AI | Career Intelligence</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <a class="brand" href="#">DevPath<span>AI</span></a>
+
+    <button id="themeButton" class="theme-button">
+        ☀ / ☾
+    </button>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="side-title">WORKSPACE</div>
+
+        <a href="#overview">▦ &nbsp; Overview</a>
+        <a href="#profile">♙ &nbsp; My Profile</a>
+        <a href="#assessment">◎ &nbsp; Skill Assessment</a>
+        <a href="#careers">⌘ &nbsp; Career Matcher</a>
+        <a href="#roadmap">↗ &nbsp; Learning Roadmap</a>
+        <a href="#goals">✓ &nbsp; Goal Tracker</a>
+
+        <div class="sidebar-note">
+            <span class="status-dot"></span>
+            Career growth starts here.
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="welcome" id="overview">
+            <div>
+                <div class="eyebrow">YOUR PERSONAL CAREER COMPANION</div>
+
+                <h1>Build your future.<br>
+                    <span>One skill at a time.</span>
+                </h1>
+
+                <p>
+                    Analyze your skills, explore career paths,
+                    and build a learning plan designed around your goals.
+                </p>
+            </div>
+
+            <div class="hero-icon">✦</div>
+        </section>
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-label">SKILLS ASSESSED</div>
+                <div class="stat-number" id="skillsCount">0/5</div>
+                <div class="stat-foot">Technical skill categories</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-label">SKILL AVERAGE</div>
+                <div class="stat-number" id="averageScore">0%</div>
+                <div class="stat-foot">Based on your latest assessment</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-label">LEARNING GOALS</div>
+                <div class="stat-number" id="goalCount">0</div>
+                <div class="stat-foot">Goals completed / total</div>
+            </article>
+        </section>
+
+        <section class="panel" id="profile">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">GET STARTED</div>
+                    <h2>Your Profile</h2>
+                </div>
+                <span class="step-badge">01</span>
+            </div>
+
+            <form id="profileForm" class="form-grid">
+
+                <label>
+                    Full Name
+                    <input
+                        type="text"
+                        id="studentName"
+                        maxlength="80"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Course / Qualification
+                    <input
+                        type="text"
+                        id="course"
+                        maxlength="100"
+                        placeholder="e.g. Diploma in CSE"
+                        required
+                    >
+                </label>
+
+                <label class="full-width">
+                    Career Interests
+                    <select id="interests" required>
+                        <option value="">Choose your interest</option>
+                        <option>Web Development</option>
+                        <option>Python Development</option>
+                        <option>Java Development</option>
+                        <option>Software Development</option>
+                    </select>
+                </label>
+
+                <button class="primary-button full-width" type="submit">
+                    Create My Profile →
+                </button>
+
+            </form>
+
+            <div id="profileMessage" class="message"></div>
+        </section>
+
+        <section class="panel" id="assessment">
+
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">KNOW YOUR STRENGTHS</div>
+                    <h2>Technical Skill Assessment</h2>
+                    <p class="section-description">
+                        Rate your current skills from 0 to 100.
+                    </p>
+                </div>
+
+                <span class="step-badge">02</span>
+            </div>
+
+            <form id="assessmentForm">
+
+                <div class="skill-row">
+                    <label for="html">HTML</label>
+                    <input type="range" id="html" min="0" max="100" value="60">
+                    <output id="htmlValue">60%</output>
+                </div>
+
+                <div class="skill-row">
+                    <label for="css">CSS</label>
+                    <input type="range" id="css" min="0" max="100" value="50">
+                    <output id="cssValue">50%</output>
+                </div>
+
+                <div class="skill-row">
+                    <label for="javascript">JavaScript</label>
+                    <input type="range" id="javascript" min="0" max="100" value="40">
+                    <output id="javascriptValue">40%</output>
+                </div>
+
+                <div class="skill-row">
+                    <label for="python">Python</label>
+                    <input type="range" id="python" min="0" max="100" value="50">
+                    <output id="pythonValue">50%</output>
+                </div>
+
+                <div class="skill-row">
+                    <label for="java">Java</label>
+                    <input type="range" id="java" min="0" max="100" value="40">
+                    <output id="javaValue">40%</output>
+                </div>
+
+                <button class="primary-button" type="submit">
+                    Analyze My Skills →
+                </button>
+
+            </form>
+
+            <div id="assessmentMessage" class="message"></div>
+
+        </section>
+
+        <section class="panel" id="careers">
+
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">EXPLORE YOUR POTENTIAL</div>
+                    <h2>Career Matches</h2>
+                    <p class="section-description">
+                        Recommendations based on your skill scores.
+                    </p>
+                </div>
+            </div>
+
+            <div id="careerResults" class="career-grid">
+                <div class="empty-state">
+                    Create a profile and complete your assessment
+                    to discover your career matches.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="panel" id="roadmap">
+
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">YOUR NEXT STEPS</div>
+                    <h2>Learning Roadmap</h2>
+                </div>
+            </div>
+
+            <div id="roadmapContent" class="roadmap-content">
+                <div class="empty-state">
+                    Select a career match to view its learning roadmap.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="panel" id="goals">
+
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">STAY CONSISTENT</div>
+                    <h2>Learning Goals</h2>
+                </div>
+            </div>
+
+            <form id="goalForm" class="goal-form">
+
+                <input
+                    id="goalTitle"
+                    type="text"
+                    maxlength="150"
+                    placeholder="e.g. Complete JavaScript fundamentals"
+                    required
+                >
+
+                <button type="submit" class="primary-button">
+                    + Add Goal
+                </button>
+
+            </form>
+
+            <div id="goalList" class="goal-list">
+                <div class="empty-state">
+                    Create your profile to start tracking goals.
+                </div>
+            </div>
+
+            <div id="goalMessage" class="message"></div>
+
+        </section>
+
+        <footer>
+            <span class="brand">DevPath<span>AI</span></span>
+            <p>Learn continuously. Build confidently.</p>
+            <small>Career recommendations are indicative, not guarantees.</small>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

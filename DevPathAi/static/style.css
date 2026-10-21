@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #080b14;
+    --surface: #111625;
+    --surface-two: #171e30;
+    --border: #252d43;
+    --text: #f3f5ff;
+    --muted: #929db5;
+    --primary: #8b7cff;
+    --secondary: #40d9d0;
+    --success: #57d6a0;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+    transition: background .2s, color .2s;
+}
+
+body.light {
+    --background: #f3f5fb;
+    --surface: #ffffff;
+    --surface-two: #edf0fa;
+    --border: #dce1ee;
+    --text: #1b2235;
+    --muted: #69748a;
+    --primary: #6555e8;
+    --secondary: #078d91;
+}
+
+.topbar {
+    height: 70px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    color: var(--text);
+    font-size: 24px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: var(--primary);
+}
+
+.theme-button {
+    background: var(--surface-two);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+    padding: 28px 16px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+}
+
+.side-title,
+.eyebrow {
+    color: var(--secondary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.side-title {
+    margin: 5px 12px 22px;
+}
+
+.sidebar a {
+    display: block;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 13px 12px;
+    margin: 5px 0;
+    border-radius: 9px;
+    font-size: 13px;
+    transition: .2s;
+}
+
+.sidebar a:hover {
+    background: var(--surface-two);
+    color: var(--text);
+}
+
+.sidebar-note {
+    margin-top: 55px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 2;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--success);
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.main-content {
+    padding: 34px;
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 35px;
+    background:
+        radial-gradient(ellipse at top right, #43367b66, transparent 50%),
+        var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    margin-bottom: 22px;
+}
+
+.welcome h1 {
+    font-size: clamp(28px, 4vw, 45px);
+    line-height: 1.2;
+    margin: 16px 0;
+    letter-spacing: -1.8px;
+}
+
+.welcome h1 span {
+    color: var(--primary);
+}
+
+.welcome p,
+.section-description {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 13px;
+    max-width: 570px;
+}
+
+.hero-icon {
+    font-size: 85px;
+    color: var(--primary);
+    padding: 0 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.stat-card,
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.stat-card {
+    padding: 22px;
+}
+
+.stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 17px 0 8px;
+}
+
+.stat-foot {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.panel {
+    padding: 27px;
+    margin-bottom: 22px;
+    scroll-margin-top: 90px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 21px;
+    margin: 10px 0 0;
+    letter-spacing: -.5px;
+}
+
+.step-badge {
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 9px 12px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+label {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input,
+select {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-top: 9px;
+    color: var(--text);
+    background: var(--surface-two);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+}
+
+select option {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.primary-button {
+    background: linear-gradient(110deg, #7565ef, #9a73f5);
+    color: white;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s, opacity .2s;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr) 50px;
+    align-items: center;
+    gap: 18px;
+    margin: 17px 0;
+}
+
+.skill-row label {
+    color: var(--text);
+}
+
+.skill-row input[type="range"] {
+    padding: 0;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.skill-row output {
+    text-align: right;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#assessmentForm .primary-button {
+    margin-top: 18px;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.career-card {
+    background: var(--surface-two);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.career-card h3 {
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+
+.career-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.score-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 15px 0 9px;
+}
+
+.progress-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 9px;
+}
+
+.roadmap-content {
+    display: grid;
+    gap: 12px;
+}
+
+.roadmap-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 15px;
+    background: var(--surface-two);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.roadmap-number {
+    min-width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: #8b7cff22;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.roadmap-step p {
+    margin: 6px 0 0;
+    font-size: 13px;
+}
+
+.goal-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.goal-form input {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    margin-top: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.goal-item input {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    accent-color: var(--primary);
+}
+
+.goal-item span {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.goal-item.done span {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.empty-state {
+    padding: 24px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.message {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--secondary);
+}
+
+.message.error {
+    color: #ff8b9c;
+}
+
+footer {
+    padding: 25px 5px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+footer .brand {
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: flex;
+        overflow-x: auto;
+        gap: 6px;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar .side-title,
+    .sidebar-note {
+        display: none;
+    }
+
+    .sidebar a {
+        white-space: nowrap;
+        padding: 12px;
+        font-size: 11px;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 0 18px;
+    }
+
+    .main-content {
+        padding: 14px;
+    }
+
+    .welcome {
+        padding: 24px 18px;
+    }
+
+    .hero-icon {
+        display: none;
+    }
+
+    .welcome h1 {
+        font-size: 31px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+
+    .stat-number {
+        font-size: 27px;
+        margin: 10px 0;
+    }
+
+    .panel {
+        padding: 19px 15px;
+    }
+
+    .form-grid,
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .skill-row {
+        grid-template-columns: 85px minmax(0, 1fr) 38px;
+        gap: 8px;
+    }
+
+    .skill-row label,
+    .skill-row output {
+        font-size: 11px;
+    }
+
+    .goal-form {
+        flex-direction: column;
+    }
+
+    .goal-form .primary-button {
+        width: 100%;
+    }
+}
+
+@media print {
+    .topbar,
+    .sidebar,
+    button,
+    .goal-form {
+        display: none !important;
+    }
+
+    .layout {
+        display: block;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .panel,
+    .stat-card,
+    .career-card {
+        break-inside: avoid;
+    }
+}
