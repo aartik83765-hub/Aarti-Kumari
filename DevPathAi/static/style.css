@@ -598,3 +598,37 @@ footer .brand {
         break-inside: avoid;
     }
 }
+
+/* ===== AARTI KUMARI PREMIUM WATERMARK ===== */
+
+body::after {
+    content: "AARTI KUMARI";
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    color: #a78bfa;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 9999;
+    text-shadow: 0 0 12px rgba(167, 139, 250, 0.25);
+}
+
+/* ===== DEVPATH AI FOOTER ===== */
+
+.devpath-footer {
+    text-align: center;
+    padding: 24px 12px;
+    margin-top: 30px;
+    color: #a78bfa;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    border-top: 1px solid rgba(167, 139, 250, 0.18);
+}
+
+.devpath-footer strong {
+    color: #c4b5fd;
+    font-weight: 700;
+}
