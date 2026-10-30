@@ -245,7 +245,58 @@ async function loadRoadmap(careerName) {
     }
 }
 
+// ---------------- SKILL GAP ANALYSIS ----------------
+async function loadSkillGap(careerName) {
+    const container = $("#skillGapContent");
 
+    if (!currentProfile) {
+        container.textContent = "Please create your profile first.";
+        return;
+    }
+
+    try {
+        const result = await api(
+            "/api/skill-gap/" +
+            currentProfile.profile_id + "/" +
+            encodeURIComponent(careerName)
+        );
+
+        container.innerHTML = `
+            <h3>${escapeHTML(result.career)}</h3>
+            <h2>Career Match: ${result.match}%</h2>
+
+            ${result.skills.map(skill => `
+                <div class="gap-item">
+                    <div class="score-line">
+                        <strong>${escapeHTML(skill.skill)}</strong>
+                        <span>${skill.current_score}% / 70%</span>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill"
+                             style="width:${skill.current_score}%">
+                        </div>
+                    </div>
+
+                    <p>
+                        ${escapeHTML(skill.status)}
+                        ${skill.gap > 0
+                            ? "- Improve by " + skill.gap + " points"
+                            : "- Target achieved"}
+                    </p>
+                </div>
+            `).join("")}
+        `;
+
+        $("#skillGap").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    } catch (error) {
+        container.textContent = error.message;
+    }
+}
 // ---------------- GOALS ----------------
 
 $("#goalForm").addEventListener("submit", async event => {
