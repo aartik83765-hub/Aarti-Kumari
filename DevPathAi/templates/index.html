@@ -206,6 +206,47 @@
             </div>
 
         </section>
+<!-- SKILL GAP ANALYSIS -->
+<section class="panel" id="skillGap">
+
+    <div class="section-heading">
+        <div>
+            <div class="eyebrow">IDENTIFY YOUR WEAK AREAS</div>
+            <h2>Skill Gap Analysis</h2>
+            <p class="section-description">
+                Discover which skills need improvement for your selected career.
+            </p>
+        </div>
+        <span class="step-badge">03</span>
+    </div>
+
+    <div id="skillGapContent" class="empty-state">
+        Select a career and click Analyze Skill Gap to see your report.
+    </div>
+
+</section>
+<!-- CAREER REPORT -->
+<section class="panel" id="careerReport">
+
+    <div class="section-heading">
+        <div>
+            <div class="eyebrow">YOUR CAREER SUMMARY</div>
+            <h2>Career Report</h2>
+
+            <p class="section-description">
+                Generate a printable report of your skills
+                and career progress.
+            </p>
+        </div>
+    </div>
+
+    <button id="downloadReport"
+            class="primary-button"
+            type="button">
+        Download Career Report ↓
+    </button>
+
+</section>
 
         <section class="panel" id="roadmap">
 
@@ -253,7 +294,41 @@
                 <div class="empty-state">
                     Create your profile to start tracking goals.
                 </div>
+
             </div>
+<!-- LEARNING PROGRESS TRACKER -->
+<div class="progress-dashboard">
+    <h3>My Learning Progress</h3>
+
+    <div class="progress-summary">
+        <div>
+            <span>Total Goals</span>
+            <strong id="totalGoals">0</strong>
+        </div>
+
+        <div>
+            <span>Completed</span>
+            <strong id="completedGoals">0</strong>
+        </div>
+
+        <div>
+            <span>Pending</span>
+            <strong id="pendingGoals">0</strong>
+        </div>
+
+        <div>
+            <span>Progress</span>
+            <strong id="goalProgress">0%</strong>
+        </div>
+    </div>
+
+    <div class="progress-track">
+        <div id="goalProgressBar"
+             class="progress-fill"
+             style="width: 0%">
+        </div>
+    </div>
+</div>
 
             <div id="goalMessage" class="message"></div>
 
