@@ -398,7 +398,7 @@ function renderGoals() {
 
     $("#goalCount").textContent =
         completed + "/" + currentGoals.length;
-}
+
 
 // PROGRESS TRACKER
 const total = currentGoals.length;
@@ -414,7 +414,7 @@ $("#pendingGoals").textContent = pending;
 $("#goalProgress").textContent = percentage + "%";
 
 $("#goalProgressBar").style.width = percentage + "%";
-
+}
 // ---------------- DASHBOARD REFRESH ----------------
 
 async function refreshDashboard() {
